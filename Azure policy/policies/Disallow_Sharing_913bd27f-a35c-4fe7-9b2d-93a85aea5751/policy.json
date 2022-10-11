@@ -1,0 +1,51 @@
+{
+ "properties": {
+  "displayName": "Disallow Sharing",
+  "policyType": "Custom",
+  "mode": "Indexed",
+  "description": "Disallow sharing of Azure compute gallery",
+  "metadata": {
+   "version": "1.1.0",
+   "category": "Compute Gallery",
+   "createdBy": "6b058df9-7688-4434-8b15-3ddf25f453bb",
+   "createdOn": "2022-10-11T22:50:27.8299602Z",
+   "updatedBy": "6b058df9-7688-4434-8b15-3ddf25f453bb",
+   "updatedOn": "2022-10-11T22:57:41.3425978Z"
+  },
+  "parameters": {
+   "effect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect",
+     "description": "Enable or disable the execution of the policy"
+    },
+    "allowedValues": [
+     "Audit",
+     "Disabled",
+     "Deny"
+    ],
+    "defaultValue": "Audit"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "allOf": [
+     {
+      "field": "type",
+      "equals": "Microsoft.Compute/galleries"
+     },
+     {
+      "field": "Microsoft.Compute/galleries/sharingProfile.permissions",
+      "equals": "Community"
+     }
+    ]
+   },
+   "then": {
+    "effect": "[parameters('effect')]"
+   }
+  }
+ },
+ "id": "/subscriptions/ee1f9510-69f4-427b-a306-ad85b55cc68b/providers/Microsoft.Authorization/policyDefinitions/913bd27f-a35c-4fe7-9b2d-93a85aea5751",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "913bd27f-a35c-4fe7-9b2d-93a85aea5751"
+}
