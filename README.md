@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @sandeepraichura
-- 👀 I’m interested in contributing to Microsoft Docs.
-- 🌱 I’m currently learning how to use GitHub to update docs.
+- 👀 I’m interested in contributing to Microsoft Docs
+- 🌱 I’m currently updating docs for Azure compute gallery and it's features
 - 📫 How to reach me ...
 
 <!---
